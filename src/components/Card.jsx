@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
-import reviews from "../data";
 
-const Card = () => {
-    // console.log(reviews);
+const Card = ({data}) => {
     const [index, setIndex] = useState(0);
-    const { name, job, image, text } = reviews[index];
+    const { name, job, image, text } = data[index];
     function clickHandler(value) {
-        setIndex((index + value + reviews.length) % reviews.length);
+        setIndex((index + value + data.length) % data.length);
     }
     function randomHandler() {
-      let randomIndex;
+      let randomIndex=index;
       do {
-        randomIndex = Math.floor(Math.random() * reviews.length);
+        randomIndex = Math.floor(Math.random() * data.length);
       } while (randomIndex === index);
       setIndex(randomIndex);
     }

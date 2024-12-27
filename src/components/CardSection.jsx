@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card';
 
-const CardSection = () => {
+const CardSection = ({data}) => {
 
   return (
     <div className='flex flex-col justify-center items-center '>
@@ -9,7 +9,7 @@ const CardSection = () => {
         <h1 className="text-4xl font-bold text-center">Our Testimonials</h1>
         <div className="bg-[#A78BFA] h-1 w-[150px] mt-2"></div>
       </div>
-      <Card />
+      <Card data = {data} />
     </div>
   );
 }
